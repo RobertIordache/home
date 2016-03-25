@@ -25,7 +25,7 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Robert did it and work! :)";
+        return "Robert did it and works! :)";
     }
     
     @GET
