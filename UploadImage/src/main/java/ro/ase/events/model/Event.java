@@ -19,4 +19,5 @@ public class Event {
 	private EventType type;
 	private Location location;
 	private Set<User> participants=new HashSet<>();
+	
 }

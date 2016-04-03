@@ -10,7 +10,8 @@ public class Location {
 	private Double longitude;
 	private String city;
 	private String country;
-	private String description;
+	private String address;
+	private String zipCode;
 	
 
 }

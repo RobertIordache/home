@@ -11,11 +11,9 @@ public class User {
 	private String email;
 	private String password;
 	private String avatarURL;
-	private User organizer;
+	private int type;
 	private Location location;
-	private int permision;
 	private Set<Event> events=new HashSet<>();
-	
 	
 	
 }
