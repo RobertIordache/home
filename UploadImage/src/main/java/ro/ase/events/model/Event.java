@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -67,7 +68,9 @@ public class Event {
 	@JoinColumn(name="LOCATION_ID")
 	private Location location;
 	
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "events")
+	@ManyToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@JoinTable(name="EVENTS_USERS",joinColumns={@JoinColumn(name="EVENT_ID",nullable=false)},
+	inverseJoinColumns={@JoinColumn(name="USER_ID",nullable=false)})
 	private Set<User> participants=new HashSet<>();
 
 	public Event() {

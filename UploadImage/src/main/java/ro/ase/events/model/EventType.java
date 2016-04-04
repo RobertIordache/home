@@ -28,9 +28,8 @@ public class EventType {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EventType(int id, String title, String description) {
+	public EventType( String title, String description) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.description = description;
 	}

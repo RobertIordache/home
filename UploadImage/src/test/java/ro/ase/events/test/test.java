@@ -4,8 +4,12 @@ import java.util.Date;
 
 import org.hibernate.HibernateException;
 
+import ro.ase.events.dao.EventDao;
+import ro.ase.events.dao.EventTypeDao;
 import ro.ase.events.dao.LocationDao;
+import ro.ase.events.dao.UserDao;
 import ro.ase.events.model.Event;
+import ro.ase.events.model.EventType;
 import ro.ase.events.model.Location;
 import ro.ase.events.model.User;
 import ro.ase.events.utils.HibernateSessionFactory;
@@ -30,9 +34,22 @@ public class test {
 		Location location=new Location("Bucharest","Romania","Piata Romana").setId(9);
 		System.out.println(location);
 		
-		//Event event=new Event("Booha","Party harder",new Date(),new Date(),new Date(), 40, new User(), type, location)
+		User user=new User("admin@gmail.com", "admin");
+		System.out.println(user);
+		EventType eventType=new EventType("racing","bucharest tour");
+		
+		Event event=new Event("Booha","Party harder",new Date(),new Date(),new Date(), 40d,user ,eventType,location);
 		
 		LocationDao locationDao=new LocationDao();
+		EventTypeDao eventTypeDao=new EventTypeDao();
+		UserDao userDao=new UserDao();
+		EventDao eventDao=new EventDao();
+		event.getParticipants().add(user);
+		
+		//userDao.saveObject(user);
+		eventDao.saveObject(event);
+		//user.getEvents().add(event);
+		//userDao.saveObject(user);
 		//locationDao.saveObject(location);
 		//locationDao.deleteObject(location);
 //		try{
