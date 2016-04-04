@@ -27,6 +27,56 @@ public class Ticket {
 	@JoinColumn(name = "EVENT_ID")
 	private Event event;
 
+	public Ticket() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Ticket(int id, User user, Event event) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.event = event;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public Ticket setId(int id) {
+		this.id = id;
+		return this;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public Ticket setUser(User user) {
+		this.user = user;
+		return this;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public Ticket setEvent(Event event) {
+		this.event = event;
+		return this;
+	}
+	
+	public Ticket build(){
+		return this;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", user=" + user + ", event=" + event + "]";
+	}
+	
+
 	
 	
 }

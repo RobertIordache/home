@@ -22,6 +22,59 @@ public class EventType {
 	
 	@Column(name = "DESCRIPTION",nullable=false)
 	private String description;
+
+	public EventType() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EventType(int id, String title, String description) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+	}
+
+	public EventType setId(int id) {
+		this.id = id;
+		return this;
+	}
+
+	public EventType setTitle(String title) {
+		this.title = title;
+		return this;
+	}
+
+	public EventType setDescription(String description) {
+		this.description = description;
+		return this;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public EventType build(){
+		return this;
+	}
+	
+	@Override
+	public String toString() {
+		return "EventType [id=" + id + ", title=" + title + ", description=" + description + "]";
+	}
+	
+	
+	
+	
+	
 	
 	
 }

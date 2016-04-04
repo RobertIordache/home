@@ -51,6 +51,116 @@ public class User {
 	@JoinTable(name="EVENTS_USERS",joinColumns={@JoinColumn(name="USER_ID",nullable=false)},
 	inverseJoinColumns={@JoinColumn(name="EVENT_ID",nullable=false)})
 	private Set<Event> events=new HashSet<>();
+
+	public User(String email, String password) {
+		super();
+		
+		
+		this.email = email;
+		this.password = password;
+		this.avatarURL =  "someCoverURL";
+		this.type = 1;
+		this.location = new Location("Bucharest","Romania","unknow");
+		this.firstName =email;
+		this.lastName = email;
+	}
+
+	public User() {
+		super();
+	}
+
+	public User setId(int id) {
+		this.id = id;
+		return this;
+	}
+
+	public User setFirstName(String firstName) {
+		this.firstName = firstName;
+		return this;
+	}
+
+	public User setLastName(String lastName) {
+		this.lastName = lastName;
+		return this;
+	}
+
+	public User setEmail(String email) {
+		this.email = email;
+		return this;
+	}
+
+	public User setPassword(String password) {
+		this.password = password;
+		return this;
+	}
+
+	public User setAvatarURL(String avatarURL) {
+		this.avatarURL = avatarURL;
+		return this;
+	}
+
+	public User setType(int type) {
+		this.type = type;
+		return this;
+	}
+
+	public User setLocation(Location location) {
+		this.location = location;
+		return this;
+	}
+
+	public User setEvents(Set<Event> events) {
+		this.events = events;
+		return this;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getAvatarURL() {
+		return avatarURL;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public Set<Event> getEvents() {
+		return events;
+	}
+	
+	public User build(){
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", password=" + password + ", avatarURL=" + avatarURL + ", type=" + type + ", location=" + location
+				+ ", events=" + events + "]";
+	}
+	
 	
 	
 }

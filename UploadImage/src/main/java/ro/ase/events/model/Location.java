@@ -111,7 +111,12 @@ public class Location {
 		this.zipCode = zipCode;
 		return this;
 	}
-
+	
+	public Location build(){
+		return this;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Location [id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + ", city=" + city
